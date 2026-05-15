@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-blue: #005a85;
+  --color-brand-cream: #ffefc6;
+  --font-poppins: "Poppins", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
+  /* Establecemos el color crema como fondo principal */
+  --background: #ffefc6;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  font-family: var(--font-poppins);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
