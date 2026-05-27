@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #005a85;
+  /* 1. Primario: Azul Don Guayo Oficial */
+  --color-brand-blue: #015a85;
+  
+  /* 2. Secundario: Verde Campo/Granjero (Extraído de las botas/overol del logo) */
+  --color-brand-green: #107c41;
+  
+  /* 3. Acento: Amarillo Claro / Crema de contraste para botones y hovers */
+  --color-brand-accent: #fffcf0;
+
+  /* Fondo estructural base */
   --color-brand-cream: #ffefc6;
+  
   --font-poppins: "Poppins", sans-serif;
 }
 
 :root {
-  /* Establecemos el color crema como fondo principal */
+  /* Establecemos el color crema como fondo principal de la aplicación */
   --background: #ffefc6;
-  --foreground: #171717;
+  --foreground: #015a85; /* Cambiado a azul para que todo el texto base combine con la marca */
 }
 
 body {

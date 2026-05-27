@@ -17,11 +17,11 @@ export default function UnderConstruction() {
             width={180} 
             height={90} 
             priority
-            className="object-contain brightness-90 contrast-125"
+            className="object-contain"
           />
         </div>
 
-        {/* Título Monumental Estilo Tillamook */}
+        {/* Título Monumental Estilo Tillamook (Usando text-brand-blue #015a85) */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-brand-blue uppercase leading-[0.85] tracking-[-0.04em] mb-8">
           ESTAMOS <br />
           EN CONSTRUCCIÓN
@@ -30,13 +30,17 @@ export default function UnderConstruction() {
         {/* Mensaje Informativo */}
         <p className="text-brand-blue text-base md:text-lg font-semibold max-w-lg leading-relaxed opacity-90 px-4">
           Estamos preparando nuestra nueva experiencia digital para llevarte 
-          la frescura de nuestros productos de una manera más fácil y rápida. 
+          la frescura de nuestros productos de una manera más fácil y{" "}
+          {/* Usamos el Amarillo de Acento aquí para destacar */}
+          <span className="bg-brand-accent px-2 py-0.5 rounded text-brand-blue">
+            rápida.
+          </span>{" "}
           ¡Nos vemos muy pronto!
         </p>
       </div>
 
-      {/* Footer simple de cortesía */}
-      <div className="text-brand-blue/60 text-xs font-bold tracking-wider uppercase pt-8">
+      {/* Footer simple usando tu nuevo color Secundario (text-brand-green) */}
+      <div className="text-brand-green/80 text-xs font-bold tracking-wider uppercase pt-8">
         © {new Date().getFullYear()} Lácteos Don Guayo. Todos los derechos reservados.
       </div>
 
