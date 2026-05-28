@@ -7,18 +7,33 @@
   /* 2. Secundario: Verde Campo/Granjero (Extraído de las botas/overol del logo) */
   --color-brand-green: #107c41;
   
-  /* 3. Acento: Amarillo Claro / Crema de contraste para botones y hovers */
-  --color-brand-accent: #fffcf0;
+  /* 3. Acento: Azul Claro / Azul de contraste para botones y hovers */
+  --color-brand-accent: #015a8580;
 
   /* Fondo estructural base */
-  --color-brand-cream: #ffefc6;
+  --color-brand-white: #fffcf0; 
   
   --font-poppins: "Poppins", sans-serif;
+
+  /* --- ANIMACIONES ESTILO TAILWIND v4 --- */
+  /* Registramos la animación y los keyframes directamente en el tema */
+  --animate-slide-up-fast: slideUpFast 0.3s ease-out forwards;
+
+  @keyframes slideUpFast {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 :root {
-  /* Establecemos el color crema como fondo principal de la aplicación */
-  --background: #ffefc6;
+  /* Establecemos el color blanco como fondo principal de la aplicación */
+  --background: #fffcf0;
   --foreground: #015a85; /* Cambiado a azul para que todo el texto base combine con la marca */
 }
 
@@ -27,4 +42,11 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   margin: 0;
+}
+
+/* --- CLASES DE UTILIDAD PERSONALIZADAS v4 --- */
+/* En v4, las clases de utilidad que no son nativas se escriben como CSS puro al final del archivo */
+.animate-slide-up-fast {
+  animation: var(--animate-slide-up-fast);
+  opacity: 0; /* Asegura que el elemento esté oculto antes de que empiece la animación */
 }
