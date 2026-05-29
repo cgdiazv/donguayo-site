@@ -51,7 +51,7 @@ export default function Home() {
                 2. drop-shadow-[0_25px_20px_rgba(0,0,0,0.3)] genera un sombreado pesado, oscuro y difuminado
                    justo en la base del objeto real, dando el peso de superficie que buscas.
               */
-              className="object-contain object-right origin-right scale-125 lg:scale-150 translate-x-4 lg:translate-x-12 transform transition-transform duration-700 pointer-events-auto hover:scale-[1.3] lg:hover:scale-[1.55] saturate-110"
+              className="object-contain object-right origin-right scale-125 lg:scale-150 translate-x-4 lg:translate-x-12 transform transition-transform duration-700 pointer-events-auto hover:scale-[1.3] lg:hover:scale-[1.55] drop-shadow-[20px_20px_25px_rgba(0,0,0,0.8)] saturate-110"
             />
           </div>
         </div>
