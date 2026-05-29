@@ -11,8 +11,7 @@ export default function Home() {
         className="w-full relative bg-cover bg-center bg-no-repeat" 
         style={{ backgroundImage: "url('/campo-vacas.webp')" }}
       >
-        {/* Overlay difuminado hacia la derecha */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fffcf0]/90 via-[#fffcf0]/60 to-transparent z-0"></div>
+
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 pt-8 lg:pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
@@ -20,12 +19,12 @@ export default function Home() {
           <div className="lg:col-span-7 flex flex-col items-start relative z-10">
             
             {/* Badge pequeño */}
-            <span className="animate-slide-up-fast text-brand-green font-black text-sm uppercase tracking-widest mb-4 bg-brand-green/10 px-3 py-1 rounded" style={{ animationDelay: '50ms' }}>
+            <span className="animate-slide-up-fast text-brand-blue font-black text-sm uppercase tracking-widest mb-4 bg-brand-white/50 px-3 py-1 rounded" style={{ animationDelay: '50ms' }}>
               Calidad Premium desde el Origen
             </span>
 
             {/* Título Estilo Tillamook */}
-            <h1 className="animate-slide-up-fast text-[10vw] sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-brand-blue uppercase leading-[0.8] tracking-[-0.05em] text-left mb-8" style={{ animationDelay: '100ms' }}>
+            <h1 className="animate-slide-up-fast text-[10vw] sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-brand-white uppercase leading-[0.8] tracking-[-0.05em] text-left mb-8 drop-shadow-[3px_3px_4px_rgba(0,0,0,0.25)]" style={{ animationDelay: '100ms' }}>
               ELABORADOS CON <br />
               LECHE 100% FRESCA
             </h1>
@@ -33,7 +32,7 @@ export default function Home() {
             {/* Botón de Acción */}
             <Link 
               href="/productos" 
-              className="animate-slide-up-fast relative z-20 inline-block rounded-full bg-brand-blue px-10 py-4 text-lg font-bold uppercase tracking-wider text-brand-white transition-colors duration-200 hover:bg-brand-accent hover:text-brand-blue shadow-lg"
+              className="animate-slide-up-fast relative z-20 inline-block rounded-full bg-brand-blue px-10 py-4 text-lg font-bold uppercase tracking-wider text-brand-white transition-colors duration-200 hover:bg-brand-white/85 hover:text-brand-blue shadow-[4px_4px_10px_rgba(0,0,0,0.25)]"
               style={{ animationDelay: '150ms' }}
             >
               Conocer Más »
@@ -43,8 +42,8 @@ export default function Home() {
           {/* Columna Derecha: El Producto al Frente con Sombra Acoplada Nativamente */}
           <div className="animate-slide-up-fast lg:col-span-5 relative w-full h-[350px] lg:h-[500px] z-10 pointer-events-none overflow-visible" style={{ animationDelay: '200ms' }}>
             <Image
-              src="/hero-cheese.webp" 
-              alt="Brochetas de Queso Fresco Don Guayo"
+              src="/hero-lacteos.webp" 
+              alt="Productos Lácteos Don Guayo"
               fill
               priority
               /* 
@@ -52,7 +51,7 @@ export default function Home() {
                 2. drop-shadow-[0_25px_20px_rgba(0,0,0,0.3)] genera un sombreado pesado, oscuro y difuminado
                    justo en la base del objeto real, dando el peso de superficie que buscas.
               */
-              className="object-contain object-right origin-right scale-125 lg:scale-150 translate-x-4 lg:translate-x-12 transform transition-transform duration-700 pointer-events-auto hover:scale-[1.3] lg:hover:scale-[1.55] drop-shadow-[0_25px_20px_rgba(1,90,133,0.35)] saturate-110"
+              className="object-contain object-right origin-right scale-125 lg:scale-150 translate-x-4 lg:translate-x-12 transform transition-transform duration-700 pointer-events-auto hover:scale-[1.3] lg:hover:scale-[1.55] saturate-110"
             />
           </div>
         </div>
