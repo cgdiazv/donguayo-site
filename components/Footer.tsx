@@ -1,7 +1,10 @@
+"use client";
+
+import { useActionState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Resend } from "resend";
-import { Send } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { subscribeNewsletter, SubscribeFormState } from "@/app/actions/subscribe";
 
 // Iconos de Redes Sociales estilizados tipo Lucide React
 function FacebookIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -46,44 +49,18 @@ const SOCIAL_NETWORKS = [
   { name: "TikTok", href: "https://tiktok.com", Icon: TiktokIcon },
 ];
 
-// Inicializamos Resend fuera del componente con la variable de entorno
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default function Footer() {
-  // Server Action para procesar el envío de forma segura en el servidor
-async function handleSubscribe(formData: FormData) {
-  "use server";
-  const email = formData.get("email") as string;
-  
-  if (!email) return;
+  const [state, formAction, isPending] = useActionState<SubscribeFormState | null, FormData>(
+    subscribeNewsletter,
+    null
+  );
+  const formRef = useRef<HTMLFormElement>(null);
 
-  try {
-    await resend.emails.send({
-      // Usamos el correo verificado de tu agencia/servidor para despachar la notificación
-      from: "Lácteos Don Guayo Portal <notifications@indevasa.com>",
-      to: ["contacto@lacteosdonguayo.com"],
-      subject: "¡Nuevo Suscriptor al Newsletter!",
-      html: `
-        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #015a85; border-radius: 8px; max-w-md; margin: 0 auto;">
-          <h2 style="color: #015a85; text-transform: uppercase; margin-bottom: 5px; font-size: 20px;">¡Nuevo registro de correo!</h2>
-          <p style="color: #666; font-size: 14px; margin-top: 0;">Un usuario ha solicitado unirse al newsletter desde el sitio web.</p>
-          
-          <div style="background-color: #fffcf0; padding: 15px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #015a85;">
-            <span style="font-size: 12px; text-transform: uppercase; color: #015a85; font-weight: bold; display: block; margin-bottom: 2px;">Correo del Suscriptor</span>
-            <a href="mailto:${email}" style="font-size: 16px; font-weight: bold; color: #015a85; text-decoration: none;">${email}</a>
-          </div>
-          
-          <hr style="border: 0; border-top: 1px solid #eee;" />
-          <p style="font-size: 11px; color: #999; text-align: center; margin-bottom: 0;">
-            Este es un mensaje automático generado para Lácteos Don Guayo a través de Indeva Websites.
-          </p>
-        </div>
-      `,
-    });
-  } catch (error) {
-    console.error("Error enviando el correo a través de Resend:", error);
-  }
-}
+  useEffect(() => {
+    if (state?.success) {
+      formRef.current?.reset();
+    }
+  }, [state]);
 
   return (
     <footer className="w-full bg-brand-blue text-brand-white pt-16 pb-12 px-6 md:px-12 border-t border-brand-white/10">
@@ -105,22 +82,45 @@ async function handleSubscribe(formData: FormData) {
 
           {/* Derecha: Formulario e Iconos */}
           <div className="lg:col-span-5 flex flex-col gap-6 w-full lg:items-end">
-            <form action={handleSubscribe} className="relative w-full max-w-md">
-              <input 
-                type="email" 
-                name="email" 
-                required 
-                placeholder="Ingresa tu correo electrónico" 
-                className="w-full bg-[#fffcf0] text-brand-blue placeholder-brand-blue/60 font-bold px-6 py-4 rounded-full text-sm pr-12 focus:outline-none shadow-inner"
-              />
-              <button 
-                type="submit" 
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-blue hover:text-brand-green transition-colors p-2 font-bold cursor-pointer flex items-center justify-center"
-                aria-label="Suscribirse"
-              >
-                <Send className="w-5 h-5" />
-              </button>
-            </form>
+            <div className="w-full max-w-md flex flex-col gap-2">
+              <form ref={formRef} action={formAction} className="relative w-full">
+                <input 
+                  type="email" 
+                  name="email" 
+                  required 
+                  placeholder="Ingresa tu correo electrónico" 
+                  className="w-full bg-[#fffcf0] text-brand-blue placeholder-brand-blue/60 font-bold px-6 py-4 rounded-full text-sm pr-12 focus:outline-none shadow-inner"
+                  disabled={isPending}
+                />
+                <button 
+                  type="submit" 
+                  disabled={isPending}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-blue hover:text-brand-green transition-colors p-2 font-bold cursor-pointer flex items-center justify-center disabled:opacity-50"
+                  aria-label="Suscribirse"
+                >
+                  {isPending ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+                </button>
+              </form>
+
+              {state?.message && (
+                <div 
+                  className={`p-3 rounded-2xl flex items-center gap-2.5 text-xs font-bold transition-all ${
+                    state.success 
+                      ? "bg-emerald-500/20 text-emerald-200 border border-emerald-500/30" 
+                      : "bg-red-500/20 text-red-200 border border-red-500/30"
+                  }`}
+                >
+                  {state.success ? (
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                  )}
+                  <span>{state.message}</span>
+                </div>
+              )}
+            </div>
+
+            {/* Redes Sociales Estilo Círculo con Iconos Lucide */}
 
             {/* Redes Sociales Estilo Círculo con Iconos Lucide */}
             <div className="flex gap-3 lg:justify-end">
