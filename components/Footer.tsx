@@ -145,7 +145,7 @@ async function handleSubscribe(formData: FormData) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-12 items-start">
           
           {/* Logo Corporativo Grande */}
-          <div className="lg:col-span-4 flex flex-col items-start gap-4">
+          <div className="lg:col-span-4 flex flex-col items-start gap-3">
             <div className="relative w-[180px] h-[90px]">
               <Image 
                 src="/logo.webp" 
@@ -157,6 +157,14 @@ async function handleSubscribe(formData: FormData) {
             <p className="text-xs font-bold tracking-widest uppercase">
               Sabor Puro, Tradición Familiar ™
             </p>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Lacteos+Don+Guayo+San+Pedro+Sula"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-brand-white/80 hover:text-brand-white hover:underline font-medium leading-relaxed max-w-xs transition-colors"
+            >
+              Barrio Los Andes, 7 calle, entre 12 y 13 avenida, San Pedro Sula, Honduras
+            </a>
           </div>
 
           {/* Columnas de Enlaces de Navegación con peso reducido */}
