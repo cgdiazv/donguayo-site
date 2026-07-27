@@ -41,10 +41,10 @@ export default function EmpresaPage() {
               "El sabor puro de la tradición, desde 1989 a tu mesa."
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link 
                 href="/productos"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-white px-8 py-4 text-base font-black uppercase tracking-wider text-brand-blue transition-all duration-200 hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md shadow-lg group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white px-8 py-4 text-base font-black uppercase tracking-wider text-brand-blue transition-all duration-200 hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md shadow-lg group text-center"
               >
                 <span>Ver Productos</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -52,7 +52,7 @@ export default function EmpresaPage() {
               
               <Link 
                 href="/contactenos"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 px-8 py-4 text-base font-bold uppercase tracking-wider text-brand-white transition-all duration-200 backdrop-blur-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 px-8 py-4 text-base font-bold uppercase tracking-wider text-brand-white transition-all duration-200 backdrop-blur-sm text-center"
               >
                 <span>Contáctenos</span>
               </Link>
@@ -378,16 +378,16 @@ export default function EmpresaPage() {
           <p className="text-sm md:text-base text-brand-white/80 font-medium max-w-xl mb-8">
             Conoce nuestra variedad de quesos, cuajadas y cremas o contáctanos para realizar tus pedidos directamente en San Pedro Sula.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
             <Link 
               href="/productos" 
-              className="bg-brand-white text-brand-blue hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md font-black text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-lg"
+              className="w-full sm:w-auto text-center bg-brand-white text-brand-blue hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md font-black text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-lg"
             >
               Explorar Productos
             </Link>
             <Link 
               href="/contactenos" 
-              className="bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 text-brand-white font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-colors"
+              className="w-full sm:w-auto text-center bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 text-brand-white font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-colors"
             >
               Hacer un Pedido
             </Link>
