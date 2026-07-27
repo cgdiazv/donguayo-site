@@ -25,15 +25,6 @@ function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function YoutubeIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-      <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
-    </svg>
-  );
-}
-
 function TiktokIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,10 +34,9 @@ function TiktokIcon({ className = "w-5 h-5" }: { className?: string }) {
 }
 
 const SOCIAL_NETWORKS = [
-  { name: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { name: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { name: "YouTube", href: "https://youtube.com", Icon: YoutubeIcon },
-  { name: "TikTok", href: "https://tiktok.com", Icon: TiktokIcon },
+  { name: "Facebook", href: "https://www.facebook.com/lacteosdonguayo", Icon: FacebookIcon },
+  { name: "Instagram", href: "https://www.instagram.com/lacteosdonguayo/", Icon: InstagramIcon },
+  { name: "TikTok", href: "https://www.tiktok.com/@lacteosdonguayo", Icon: TiktokIcon },
 ];
 
 export default function Footer() {
@@ -119,8 +109,6 @@ export default function Footer() {
                 </div>
               )}
             </div>
-
-            {/* Redes Sociales Estilo Círculo con Iconos Lucide */}
 
             {/* Redes Sociales Estilo Círculo con Iconos Lucide */}
             <div className="flex gap-3 lg:justify-end">
