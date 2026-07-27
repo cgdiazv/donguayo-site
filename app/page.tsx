@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import ProductSlider from "@/components/ProductSlider";
 
 export default function Home() {
@@ -32,10 +33,11 @@ export default function Home() {
             {/* Botón de Acción */}
             <Link 
               href="/productos" 
-              className="animate-slide-up-fast relative z-20 inline-block rounded-full bg-brand-blue px-10 py-4 text-lg font-bold uppercase tracking-wider text-brand-white transition-colors duration-200 hover:bg-brand-white/85 hover:text-brand-blue shadow-[4px_4px_10px_rgba(0,0,0,0.25)]"
+              className="animate-slide-up-fast relative z-20 inline-flex items-center gap-2 rounded-full bg-brand-blue px-10 py-4 text-lg font-bold uppercase tracking-wider text-brand-white transition-colors duration-200 hover:bg-brand-white/85 hover:text-brand-blue shadow-[4px_4px_10px_rgba(0,0,0,0.25)] group"
               style={{ animationDelay: '150ms' }}
             >
-              Conocer Más »
+              <span>Conocer Más</span>
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 

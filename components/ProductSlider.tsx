@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SlideItem {
   id: number;
@@ -117,10 +118,10 @@ export default function ProductSlider() {
           <div className="flex items-center gap-4 text-brand-blue select-none">
             <button 
               onClick={handlePrev}
-              className="w-8 h-8 rounded-full bg-brand-blue text-[#fffcf0] flex items-center justify-center font-bold text-sm hover:bg-brand-accent transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-full bg-brand-blue text-[#fffcf0] flex items-center justify-center font-bold text-sm hover:bg-brand-accent hover:text-brand-blue transition-colors cursor-pointer"
               aria-label="Anterior"
             >
-              ❮
+              <ChevronLeft className="w-5 h-5" />
             </button>
             
             <span className="font-black text-sm tracking-widest min-w-[40px] text-center">
@@ -129,10 +130,10 @@ export default function ProductSlider() {
 
             <button 
               onClick={handleNext}
-              className="w-8 h-8 rounded-full bg-brand-blue text-[#fffcf0] flex items-center justify-center font-bold text-sm hover:bg-brand-accent transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-full bg-brand-blue text-[#fffcf0] flex items-center justify-center font-bold text-sm hover:bg-brand-accent hover:text-brand-blue transition-colors cursor-pointer"
               aria-label="Siguiente"
             >
-              ❯
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 
