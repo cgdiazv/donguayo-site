@@ -248,16 +248,22 @@ export default function RecetasPage() {
     <main className="min-h-screen bg-brand-white flex flex-col overflow-x-hidden pb-24">
       
       {/* SECCIÓN HERO / BANNER */}
-      <section className="w-full bg-brand-blue text-brand-white py-16 px-6 md:px-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 bg-brand-white/10 text-brand-white font-black text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+      <section 
+        className="w-full relative bg-cover bg-center bg-no-repeat py-20 md:py-28 px-6 md:px-12 text-brand-white border-b border-brand-white/10"
+        style={{ backgroundImage: "url('/campo-vacas.webp')" }}
+      >
+        {/* Overlay sutil para resaltar la imagen del campo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/65 via-brand-blue/35 to-black/30 z-0" />
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+          <span className="inline-flex items-center gap-2 bg-brand-white/15 text-brand-white font-black text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-brand-white/20 shadow-sm backdrop-blur-md">
             Recetario Don Guayo
           </span>
-          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-4">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-[0.95] mb-6 drop-shadow-md text-center">
             CATÁLOGO DE RECETAS
           </h1>
-          <p className="text-base md:text-lg max-w-2xl mx-auto text-brand-white/85 font-medium leading-relaxed">
-            Explora las mejores combinaciones culinarias preparadas con nuestros productos estrella: Crema Don Guayo, Cuajada Fresca, Queso Crema Blanco y Queso con Chile.
+          <p className="text-xl md:text-2xl font-bold italic text-brand-white/90 max-w-2xl leading-relaxed text-center">
+            &ldquo;Explora las mejores combinaciones culinarias preparadas con nuestros productos estrella.&rdquo;
           </p>
         </div>
       </section>
