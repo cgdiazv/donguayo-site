@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { 
-  Sparkles, 
   ShieldCheck, 
   TrendingUp, 
   Award, 
   HeartHandshake, 
   CheckCircle2, 
   ArrowRight,
-  Milk,
-  Sparkle
+  Milk
 } from "lucide-react";
 
 export default function EmpresaPage() {
@@ -24,51 +22,35 @@ export default function EmpresaPage() {
         {/* Overlay sutil para resaltar la imagen del campo */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/65 via-brand-blue/35 to-black/30 z-0" />
 
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
           
-          <div className="lg:col-span-8 flex flex-col items-center md:items-start">
-            <span className="inline-flex items-center gap-2 bg-brand-white/15 text-brand-white font-black text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-brand-white/20 shadow-sm backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-brand-accent" />
-              Tradición Familiar desde 1989
-            </span>
+          <span className="inline-flex items-center gap-2 bg-brand-white/15 text-brand-white font-black text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-brand-white/20 shadow-sm backdrop-blur-md">
+            Tradición Familiar desde 1989
+          </span>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-[0.95] mb-6 drop-shadow-md">
-              NUESTRA <br />
-              HISTORIA
-            </h1>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-[0.95] mb-6 drop-shadow-md text-center">
+            NUESTRA HISTORIA
+          </h1>
 
-            <p className="text-xl md:text-2xl font-bold italic text-brand-white/90 max-w-2xl leading-relaxed mb-8 border-l-4 border-brand-accent pl-4 text-left">
-              "El sabor puro de la tradición, desde 1989 a tu mesa."
-            </p>
+          <p className="text-xl md:text-2xl font-bold italic text-brand-white/90 max-w-2xl leading-relaxed mb-8 text-center">
+            &ldquo;El sabor puro de la tradición, desde 1989 a tu mesa.&rdquo;
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Link 
-                href="/productos"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white px-8 py-4 text-base font-black uppercase tracking-wider text-brand-blue transition-all duration-200 hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md shadow-lg group text-center"
-              >
-                <span>Ver Productos</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              
-              <Link 
-                href="/contactenos"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 px-8 py-4 text-base font-bold uppercase tracking-wider text-brand-white transition-all duration-200 backdrop-blur-sm text-center"
-              >
-                <span>Contáctenos</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="lg:col-span-4 relative flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-2xl">
-              <Image 
-                src="/logo.webp" 
-                alt="Lácteos Don Guayo Logo" 
-                fill 
-                className="object-contain brightness-110"
-                priority
-              />
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+            <Link 
+              href="/productos"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white px-8 py-4 text-base font-black uppercase tracking-wider text-brand-blue transition-all duration-200 hover:bg-brand-white/20 hover:text-brand-white border border-transparent hover:border-brand-white/40 backdrop-blur-md shadow-lg group text-center"
+            >
+              <span>Ver Productos</span>
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            
+            <Link 
+              href="/contactenos"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-white/10 hover:bg-brand-white/20 border border-brand-white/30 px-8 py-4 text-base font-bold uppercase tracking-wider text-brand-white transition-all duration-200 backdrop-blur-sm text-center"
+            >
+              <span>Contáctenos</span>
+            </Link>
           </div>
 
         </div>
@@ -81,7 +63,7 @@ export default function EmpresaPage() {
             El Compromiso Don Guayo
           </h2>
           <p className="text-2xl md:text-3xl font-black text-brand-blue leading-snug">
-            "Llevar a la mesa de los hogares hondureños el sabor auténtico, puro y fresco del campo, producido con el esmero y la dedicación de una verdadera tradición familiar."
+            &ldquo;Llevar a la mesa de los hogares hondureños el sabor auténtico, puro y fresco del campo, producido con el esmero y la dedicación de una verdadera tradición familiar.&rdquo;
           </p>
         </div>
       </section>
@@ -130,14 +112,13 @@ export default function EmpresaPage() {
                     <span className="text-2xl font-black text-brand-blue tracking-tight">
                       1989 — El Origen (Nace una Tradición)
                     </span>
-                    <span className="bg-brand-blue/10 text-brand-blue text-xs font-black uppercase px-3 py-1 rounded-full flex items-center gap-1.5">
-                      <Sparkle className="w-3.5 h-3.5" />
+                    <span className="bg-brand-blue/10 text-brand-blue text-xs font-black uppercase px-3 py-1 rounded-full">
                       Procesos Artesanales
                     </span>
                   </div>
                   
                   <blockquote className="text-base md:text-lg font-bold text-brand-blue/90 italic leading-relaxed mb-4 border-l-2 border-brand-blue/30 pl-4">
-                    "Lácteos Don Guayo nació en 1989 con un propósito claro: llevar a la mesa de los hogares hondureños el sabor auténtico, puro y fresco del campo, producido con el esmero y la dedicación de una verdadera tradición familiar."
+                    &ldquo;Lácteos Don Guayo nació en 1989 con un propósito claro: llevar a la mesa de los hogares hondureños el sabor auténtico, puro y fresco del campo, producido con el esmero y la dedicación de una verdadera tradición familiar.&rdquo;
                   </blockquote>
                   
                   <p className="text-sm text-brand-blue/75 font-medium leading-relaxed">
@@ -183,7 +164,7 @@ export default function EmpresaPage() {
                   </div>
 
                   <blockquote className="text-base md:text-lg font-bold text-brand-blue/90 italic leading-relaxed mb-4 border-l-2 border-brand-blue/30 pl-4">
-                    "Desde nuestros primeros lotes, nos impusimos un estándar: no comprometer jamás la calidad. Combinamos técnicas artesanales con rigurosos controles de higiene y selección de materia prima 100% fresca de productores locales."
+                    &ldquo;Desde nuestros primeros lotes, nos impusimos un estándar: no comprometer jamás la calidad. Combinamos técnicas artesanales con rigurosos controles de higiene y selección de materia prima 100% fresca de productores locales.&rdquo;
                   </blockquote>
 
                   <p className="text-sm text-brand-blue/75 font-medium leading-relaxed">
@@ -229,7 +210,7 @@ export default function EmpresaPage() {
                   </div>
 
                   <blockquote className="text-base md:text-lg font-bold text-brand-blue/90 italic leading-relaxed mb-4 border-l-2 border-brand-blue/30 pl-4">
-                    "Con el paso de los años y la confianza de nuestros clientes, fuimos consolidando nuestra presencia, ampliando nuestra variedad de productos e integrando nuevas herramientas para estar más cerca de cada familia."
+                    &ldquo;Con el paso de los años y la confianza de nuestros clientes, fuimos consolidando nuestra presencia, ampliando nuestra variedad de productos e integrando nuevas herramientas para estar más cerca de cada familia.&rdquo;
                   </blockquote>
 
                   <p className="text-sm text-brand-blue/75 font-medium leading-relaxed">
@@ -275,7 +256,7 @@ export default function EmpresaPage() {
                   </div>
 
                   <blockquote className="text-base md:text-lg font-bold text-brand-blue/90 italic leading-relaxed mb-4 border-l-2 border-brand-blue/30 pl-4">
-                    "Hoy, Lácteos Don Guayo sigue impulsado por la misma visión de 1989: ser el acompañante infaltable en el desayuno y la cena catracha, garantizando frescura, pureza y el sabor de nuestra tierra en cada producto."
+                    &ldquo;Hoy, Lácteos Don Guayo sigue impulsado por la misma visión de 1989: ser el acompañante infaltable en el desayuno y la cena catracha, garantizando frescura, pureza y el sabor de nuestra tierra en cada producto.&rdquo;
                   </blockquote>
 
                   <p className="text-sm text-brand-blue/75 font-medium leading-relaxed">

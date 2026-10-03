@@ -20,7 +20,7 @@ export default function Home() {
           <div className="lg:col-span-7 flex flex-col items-start relative z-10">
             
             {/* Badge pequeño */}
-            <span className="animate-slide-up-fast text-brand-blue font-black text-sm uppercase tracking-widest mb-4 bg-brand-white/50 px-3 py-1 rounded" style={{ animationDelay: '50ms' }}>
+            <span className="animate-slide-up-fast text-brand-blue font-black text-sm uppercase tracking-widest mb-4 bg-brand-white/50 px-4 py-1.5 rounded-full shadow-sm" style={{ animationDelay: '50ms' }}>
               Calidad Premium desde el Origen
             </span>
 

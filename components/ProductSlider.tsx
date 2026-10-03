@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SlideItem {
   id: number;
+  slug: string;
   title: string;
   buttonText: string;
   imageSrc: string;
@@ -16,6 +18,7 @@ interface SlideItem {
 const SLIDES: SlideItem[] = [
   {
     id: 1,
+    slug: "queso-crema-con-chile",
     title: "QUESO CREMA\nCON CHILE",
     buttonText: "Ver Detalles del Queso",
     imageSrc: "/queso-crema-con-chile.webp", 
@@ -24,6 +27,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 2,
+    slug: "cuajada-fresca",
     title: "CUAJADA\nFRESCA",
     buttonText: "Explorar Cuajada",
     imageSrc: "/cuajada-fresca.webp", 
@@ -32,6 +36,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 3,
+    slug: "crema-especial",
     title: "CREMA\nESPECIAL",
     buttonText: "Ver Línea Cremosa",
     imageSrc: "/crema-especial.webp",
@@ -40,6 +45,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 4,
+    slug: "queso-crema-blanco",
     title: "QUESO\nCREMA BLANCO",
     buttonText: "Descubrir Más",
     imageSrc: "/queso-crema.webp",
@@ -110,9 +116,12 @@ export default function ProductSlider() {
           </h3>
 
           {/* Botón Estilo Píldora Ancha Centrado */}
-          <button className="bg-brand-blue text-[#fffcf0] text-xs md:text-sm font-black uppercase tracking-wider px-10 py-4 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200 shadow-md cursor-pointer">
+          <Link 
+            href={`/productos?id=${currentSlide.slug}`}
+            className="inline-block bg-brand-blue text-[#fffcf0] text-xs md:text-sm font-black uppercase tracking-wider px-10 py-4 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200 shadow-md cursor-pointer"
+          >
             {currentSlide.buttonText}
-          </button>
+          </Link>
 
           {/* Paginador e Indicador Centrado */}
           <div className="flex items-center gap-4 text-brand-blue select-none">

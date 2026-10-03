@@ -189,12 +189,12 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-2 text-sm font-medium">
                 <li>
-                  <Link href="/productos" className="hover:opacity-65 transition-all">
+                  <Link href="/productos?categoria=quesos-frescos" className="hover:opacity-65 transition-all">
                     Quesos Frescos
                   </Link>
                 </li>
                 <li>
-                  <Link href="/productos" className="hover:opacity-65 transition-all">
+                  <Link href="/productos?categoria=linea-cremosa" className="hover:opacity-65 transition-all">
                     Línea Cremosa
                   </Link>
                 </li>

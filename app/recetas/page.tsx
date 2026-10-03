@@ -6,7 +6,6 @@ import {
   Clock, 
   Users, 
   ChefHat, 
-  Sparkles, 
   X, 
   Utensils,
   CheckCircle2,
@@ -252,7 +251,6 @@ export default function RecetasPage() {
       <section className="w-full bg-brand-blue text-brand-white py-16 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 bg-brand-white/10 text-brand-white font-black text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-            <Sparkles className="w-4 h-4 text-brand-white" />
             Recetario Don Guayo
           </span>
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-4">
